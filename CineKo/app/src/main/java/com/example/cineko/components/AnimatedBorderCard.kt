@@ -29,7 +29,7 @@ import com.example.cineko.ui.theme.Blue700
 fun AnimatedBorderCard(
     modifier: Modifier = Modifier,
     shape: RoundedCornerShape = RoundedCornerShape(size = 0.dp),
-    borderWidth: Dp = 4.dp,
+    borderWidth: Dp = 1.dp,
     gradient: Brush = Brush.sweepGradient(listOf(Blue500, Blue200)),
     animationDuration: Int = 10000,
     content: @Composable () -> Unit
