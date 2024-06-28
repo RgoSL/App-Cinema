@@ -41,6 +41,10 @@ import com.example.cineko.components.TextFieldCustom
 import com.example.cineko.ui.theme.Blue200
 import com.example.cineko.ui.theme.Blue500
 import com.example.cineko.ui.theme.Blue900
+import com.example.cineko.ui.theme.Red200
+import com.example.cineko.ui.theme.Red500
+import com.example.cineko.ui.theme.Red700
+import com.example.cineko.ui.theme.Red900
 
 @Composable
 fun FormLogin(){
@@ -56,7 +60,7 @@ fun FormLogin(){
                 brush = Brush.sweepGradient(
                     listOf(
                         Color.Black,
-                        Blue900,
+                        Red700,
                         Color.Black
 
                     )
@@ -68,14 +72,14 @@ fun FormLogin(){
             text = stringResource(id = R.string.app_name),
             fontSize = 36.sp ,
             fontFamily = FontFamily.Monospace,
-            color = Color.White,
+            color = Color.Black,
             fontWeight = FontWeight.Bold,
             style = TextStyle(
                 brush = Brush.horizontalGradient(
                     listOf(
-                        Color.White,
-                        Blue500,
-                        Blue200
+                        Red200,
+                        Red700,
+                        Red200
                     )
                 )
             )
@@ -88,7 +92,7 @@ fun FormLogin(){
                 .fillMaxWidth()
                 .padding(all = 24.dp),
             shape = RoundedCornerShape(8.dp),
-            gradient = Brush.sweepGradient(listOf(Blue500, Blue200))
+            gradient = Brush.sweepGradient(listOf(Red200, Red200))
         ) {
 
             Column(
@@ -138,8 +142,8 @@ fun FormLogin(){
                             rememberMeCheck = !rememberMeCheck
                         },
                         colors = CheckboxDefaults.colors(
-                            checkedColor = Blue900,
-                            checkmarkColor = Color.White
+                            checkedColor = Red500,
+                            checkmarkColor = Color.Black
                         )
                     )
 
@@ -168,8 +172,8 @@ fun FormLogin(){
                         .height(90.dp)
                         .padding(0.dp, 20.dp),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = Blue900,
-                            contentColor = Color.White
+                            containerColor = Red700,
+                            contentColor = Color.Black
                         ),
                     shape = RoundedCornerShape(8.dp)
                 ){

@@ -21,16 +21,20 @@ import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.example.cineko.ui.theme.Black100
 import com.example.cineko.ui.theme.Blue200
 import com.example.cineko.ui.theme.Blue500
 import com.example.cineko.ui.theme.Blue700
+import com.example.cineko.ui.theme.Red200
+import com.example.cineko.ui.theme.Red500
+import com.example.cineko.ui.theme.Red700
 
 @Composable
 fun AnimatedBorderCard(
     modifier: Modifier = Modifier,
     shape: RoundedCornerShape = RoundedCornerShape(size = 0.dp),
     borderWidth: Dp = 1.dp,
-    gradient: Brush = Brush.sweepGradient(listOf(Blue500, Blue200)),
+    gradient: Brush = Brush.sweepGradient(listOf(Red200, Red500)),
     animationDuration: Int = 10000,
     content: @Composable () -> Unit
 ){
@@ -63,7 +67,7 @@ fun AnimatedBorderCard(
                     }
                     drawContent()
                 },
-            color = Blue700,
+            color = Red500,
             shape = shape
         ) {
             content()
@@ -80,8 +84,8 @@ private fun AnimatedBorderCardPreview(){
         borderWidth = 1.dp,
         gradient = Brush.sweepGradient(
             listOf(
-                Blue500,
-                Blue200
+                Red700,
+                Red200,
             )
         ),
         animationDuration = 10000

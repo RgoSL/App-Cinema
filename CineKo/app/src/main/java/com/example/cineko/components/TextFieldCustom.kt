@@ -20,7 +20,12 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.cineko.R
+import com.example.cineko.ui.theme.Black100
 import com.example.cineko.ui.theme.Blue900
+import com.example.cineko.ui.theme.Red200
+import com.example.cineko.ui.theme.Red500
+import com.example.cineko.ui.theme.Red700
+import com.example.cineko.ui.theme.Red900
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -40,15 +45,15 @@ fun TextFieldCustom(
         onValueChange,
         modifier,
         label = {
-            Text(text = hint, color = Color.White)
+            Text(text = hint, color = Color.Black)
         },
         colors = TextFieldDefaults.textFieldColors(
-            containerColor = Blue900,
-            cursorColor = Color.White
+            containerColor = Red900,
+            cursorColor = Color.Black
         ),
         maxLines = 1,
         textStyle = TextStyle(
-            color = Color.White,
+            color = Color.Black,
             fontSize = 18.sp
         ),
         keyboardOptions = keyboardOptions,
@@ -56,7 +61,7 @@ fun TextFieldCustom(
             Icon(
                 painter = painterResource(id = icon) ,
                 contentDescription = iconContentDescription,
-                tint = Color.White
+                tint = Black100
             )
         }
 
