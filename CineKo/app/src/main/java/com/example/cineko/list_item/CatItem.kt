@@ -19,12 +19,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
-import com.example.cineko.R
 import com.example.cineko.model.Catalog
+import com.example.cineko.ui.theme.Black100
+import com.example.cineko.ui.theme.Red500
+import com.example.cineko.ui.theme.Red700
+import com.example.cineko.ui.theme.Red900
 
 @Composable
 fun CatItem(
@@ -32,7 +34,7 @@ fun CatItem(
 
 ){
 
-    val  imagemMovie = cat.imgCat
+    val imagemMovie = cat.imgCat
     val movieName = cat.movName
     val descriptionMovie = cat.movDescription
     val rating = cat.parRating
@@ -40,9 +42,10 @@ fun CatItem(
     ConstraintLayout(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Color.Black)
+            .background(color = Black100)
             .padding(0.dp, 10.dp, 0.dp, 10.dp)
     ){
+
         val(
             imgCat,
             txtMovName,
@@ -63,7 +66,7 @@ fun CatItem(
                 .size(130.dp)
                 .padding(20.dp),
             colors = CardDefaults.cardColors(
-                containerColor = Color.White
+                containerColor = Color.Black
             ),
             shape = ShapeDefaults.Medium,
             elevation = CardDefaults.cardElevation(
@@ -74,7 +77,7 @@ fun CatItem(
         }
 
         Image(
-            painter = painterResource(id = R.drawable.movie1),
+            painter = painterResource(id = imagemMovie!!),
             contentDescription = null,
             modifier = Modifier
                 .constrainAs(imgCat) {
@@ -89,10 +92,10 @@ fun CatItem(
         )
 
         Text(
-            text = "Movie 1",
+            text = movieName!!,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
-            color = Color.White,
+            color = Red900,
             modifier = Modifier.constrainAs(txtMovName){
                 top.linkTo(parent.top,30.dp)
                 start.linkTo(containerImg.end,0.dp)
@@ -100,10 +103,10 @@ fun CatItem(
         )
 
         Text(
-            text = "The standard chunk of Lorem Ipsum used since the 1500s.",
+            text = descriptionMovie!!,
             fontSize = 14.sp,
             fontWeight = FontWeight.Bold,
-            color = Color.White,
+            color = Color(0xFFF29494),
             modifier = Modifier
                 .constrainAs(txtMovDescription) {
                     top.linkTo(txtMovName.bottom)
@@ -111,15 +114,15 @@ fun CatItem(
                     end.linkTo(parent.end)
                 }
                 .padding(65.dp, 10.dp, 40.dp, 0.dp),
-            maxLines = 3
+            maxLines = 4
 
         )
 
         Text(
-            text = "+12",
+            text = rating!!,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
-            color = Color.White,
+            color = Red900,
             modifier = Modifier.constrainAs(txtParRating){
                 top.linkTo(txtMovDescription.bottom,20.dp)
                 start.linkTo(containerImg.end,0.dp)
@@ -141,21 +144,23 @@ fun CatItem(
 
                 },
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFFF44336)
+                containerColor = Color(0xFF400101)
             )
         ){
+
             Text(
-                text = "Sessions",
+                text = "Sessões",
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
             )
         }
+
         Row (
             modifier = Modifier
                 .width(350.dp)
                 .height(3.dp)
-                .background(Color.White)
+                .background(color = Red500)
                 .constrainAs(rowItem) {
                     top.linkTo(txtParRating.bottom, 30.dp)
                     start.linkTo(parent.start, 20.dp)
@@ -166,4 +171,3 @@ fun CatItem(
         }
     }
 }
-

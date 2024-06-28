@@ -77,7 +77,7 @@ private fun AnimatedBorderCardPreview(){
     AnimatedBorderCard (
         modifier = Modifier.fillMaxWidth().height(200.dp),
         shape =  RoundedCornerShape(30.dp),
-        borderWidth = 10.dp,
+        borderWidth = 1.dp,
         gradient = Brush.sweepGradient(
             listOf(
                 Blue500,
